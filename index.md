@@ -37,6 +37,8 @@ def data_cleaning():
     return data[(data.champion.isna()) & (data.datacompleteness == 'complete')]
 ```
 
+<h1>ADD EMBEDDED DF</h1>
+
 <h3>Univariate Analysis</h3>
 
 <iframe
