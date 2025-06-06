@@ -38,7 +38,7 @@ def data_cleaning():
 ```
 
 <iframe
-  src="../assets/GoldDist.html"
+  src="assets/GoldDist.html"
   width="800"
   height="600"
   frameborder="0"
