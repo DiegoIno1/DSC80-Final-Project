@@ -37,6 +37,8 @@ def data_cleaning():
     return data[(data.champion.isna()) & (data.datacompleteness == 'complete')]
 ```
 
+<h3>Univariate Analysis</h3>
+
 <iframe
   src="assets/GoldDist.html"
   width="800"
@@ -44,12 +46,18 @@ def data_cleaning():
   frameborder="0"
 ></iframe>
 
+When examining the distribution of gold, we can see that there is a somewhat normal trend, where most players average 7000-8000 gold per game. This histogram is also skewed right, with some outliers existing past 20,000.
+
 <iframe
   src="assets/KillDist.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+When examining the distribution of kills, we can see that there is a downward trend, where the mode of the kills is 1 kill per game, with increasing amounts of kills becoming less common as the amount of kills increase.
+
+<h3>Bivariate Analysis</h3>
 
 <iframe
   src="assets/GoldDistPerChamp.html"
