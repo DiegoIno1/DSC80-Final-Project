@@ -66,6 +66,8 @@ When examining the distribution of kills, we can see that there is a downward tr
   frameborder="0"
 ></iframe>
 
+Because there are 170 champions in league, to visualize the gold earned by each champion and retain readability, we randomly selected 10 champions. Regardless, this graph shows the clear differences between champions and how much gold they earn, as characters like Lulu usually earn significantly less gold than characters like Kayle. 
+
 <iframe
   src="assets/RandChampAvgKills.html"
   width="800"
@@ -73,4 +75,5 @@ When examining the distribution of kills, we can see that there is a downward tr
   frameborder="0"
 ></iframe>
 
+Once again, to retain readability in this count plot, we randomly selected 25 champions. This plot once again shows the differences between the average champion stats. Characters like Master Yi outperform characters like Yuumi by very large margins, which would greatly contribute to the gold earned.
 
