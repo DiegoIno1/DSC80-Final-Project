@@ -37,12 +37,12 @@ def data_cleaning():
     return data[(data.champion.isna()) & (data.datacompleteness == 'complete')]
 ```
 
-<iframe>
-  src="assets/GoldDist.html"
+<iframe
+  src="../assets/GoldDist.html"
   width="800"
   height="600"
   frameborder="0"
-</iframe>
+></iframe>
 
 <iframe
   src="assets/KillDist.html"
