@@ -37,4 +37,32 @@ def data_cleaning():
     return data[(data.champion.isna()) & (data.datacompleteness == 'complete')]
 ```
 
+<iframe
+  src="assets/GoldDist.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/KillDist.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/GoldDistPerChamp.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/RandChampAvgKills.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 
