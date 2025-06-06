@@ -10,12 +10,12 @@ This question is interesting, as League of Legends is one of the most popular e-
 
 Within this dataset, there are 61572 rows and 161 columns. Out of these columns, a few columns are especially important to us. The columns `champion`, `earnedgold`, `kills`, `barons`, `towers`, and `damagetochampions` are notable in exploring our question.
 
-The `champion` column describes the "champion" or character of a player.
-The `earnedgold` column describes the total gold that a player earns throughout the game.
-The `kills` column describes the number of kills that a player gets throughout the game.
-The `barons` column describes the number of "barons" (a major non-player enemy found throughout the game's map) that a player kills throughout the game.
-The `towers` column describes the number of "towers" (a major obstacle that separates the players from the game's main objective) that a player destroys throughout the game.
-The `damagetochampions` column describews the amount of damage that a player does to enemy players throughout the game.
+- The `champion` column describes the "champion" or character of a player.
+- The `earnedgold` column describes the total gold that a player earns throughout the game.
+- The `kills` column describes the number of kills that a player gets throughout the game.
+- The `barons` column describes the number of "barons" (a major non-player enemy found throughout the game's map) that a player kills throughout the game.
+- The `towers` column describes the number of "towers" (a major obstacle that separates the players from the game's main objective) that a player destroys throughout the game.
+- The `damagetochampions` column describews the amount of damage that a player does to enemy players throughout the game.
 
 <h3>Example text using h3</h3>
 
