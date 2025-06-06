@@ -1,6 +1,6 @@
 <h1>League of Legends Cash Money (I wouldn't recommend this game)</h1>
 
-<h2>Step 1: Introduction</h2>
+<h2>Introduction</h2>
 
 On Oracle's Elixer's website, there is a dataset of match data surrounding professional leagues in the game "League of Legends". As two people who avidly love videogames, we were interested in seeing the patterns that could be drawn from this dataset. When analyzing the dataset at a surface level, we found ourselvews interested primarily in the gold "economy" of a League of Legends game. As a result, we posed the question:
 
@@ -18,7 +18,7 @@ Within this dataset, there are 61572 rows and 161 columns. Out of these columns,
 - The `visionscore` column describes the number of times an enemy player walked into a "ward" placed down by a player.
 
 
-<h2>Step 2: Data Cleaning and Exploratory Data Analysis</h2>
+<h2>Data Cleaning and Exploratory Data Analysis</h2>
 
 <h3>Data Cleaning</h3>
 
@@ -38,11 +38,3 @@ def data_cleaning():
 ```
 
 
-
-<h3>Example text using h3</h3>
-
-```python
-Example Code Block:
-print('Hello World')
-
-```
