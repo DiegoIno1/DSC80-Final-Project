@@ -17,7 +17,7 @@ Within this dataset, there are 61572 rows and 161 columns. Out of these columns,
 - The `towers` column describes the number of "towers" (a major obstacle that separates the players from the game's main objective) that a player destroys throughout the game. Like barons, destroying towers gives gold, while also contributing to the progress of a game.
 
 
-<h2>Step 2: Data Cleaning and Exploratory Data Analysis</h2>p
+<h2>Step 2: Data Cleaning and Exploratory Data Analysis</h2>
 
 ```python
 def data_cleaning():
