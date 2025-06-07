@@ -181,3 +181,11 @@ The model, while still being based on linear regression, has gotten some upgrade
 <h2>Fairness Analysis</h2>
 
 For our 2 groups to test between, we decided to go with the different leagues that are recorded in the data set. The 2 leagues we ended up choosing are LFL2, which stands for Ligue Française de League of Legends and is the 11th edition of the French League of Legends semi-professional league. The other group we ended up choosing is the LCKC, the League of Legends Championship Korea. The test statistic we chose is the difference in the MSE, because as stated earlier, MSE is very useful for comparing the models, but not as helpful in seeing how accurate the model itself is. Our null hypothesis is that the groups are NOT being treated differently, and the alternative hypothesis is that the groups ARE being treated differently. With this in mind, we performed our permutation test, and got a shocking p-value of .2183. This p-value tells us that we fail to reject the null hypothesis, and there is no evidence that the groups are being treated differently. 
+
+
+<iframe
+  src="assets/part8_permtest.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
