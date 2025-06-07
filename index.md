@@ -89,6 +89,8 @@ Once again, to retain readability in this count plot, we randomly selected 25 ch
 | Akshan     |        nan    |          nan |           nan    |                    nan |                            nan |        nan |               nan    |                  nan |             nan |          nan    |            nan    |                       nan |             nan |    nan   |                     nan    |     nan   |
 | Alistar    |       3928.33 |          nan |          3549.86 |                    nan |                            nan |        nan |              3833    |                  nan |             nan |         3731.71 |           4088.25 |                      1996 |             nan |   3707.5 |                    3654.25 |    3346   |
 
+Within this table, we can see the averaged gold earned by specific characters used in specific teams. This table notably shows that teams perform differently with each character. For example, Ankora Gaming and Anubis Gaming both have used the champion "Ahri". However, we can see that Anubis Gaming usually earns almost double the amount of gold that Ankora Gaming would typically earn. As a result, we can see that characters have an impact on gold earnings, but there is a lot more than just the characters themselves. 
+
 
 <h2>Assessment of Missingness</h2>
 
