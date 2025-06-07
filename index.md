@@ -1,4 +1,4 @@
-<h1>League of Legends Cash Money (I wouldn't recommend this game)</h1>
+<h1>Is a League of Legends Gold Advantage Actually an Indicater of Winning?</h1>
 
 <h2>Introduction</h2>
 
