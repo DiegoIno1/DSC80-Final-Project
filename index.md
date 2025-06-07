@@ -22,11 +22,12 @@ Within this dataset, there are 61572 rows and 161 columns. Out of these columns,
 
 <h3>Data Cleaning</h3>
 
-Our dataset was already mostly clean, so in order to clean our data, we mostly focussed on three aspects of our dataset.
+Our dataset was already mostly clean, so in order to clean our data, we mostly focussed on four aspects of our dataset.
 
 - We started by noticing how some columns seemed to be boolean values as integers. In order to make the dataset more efficient to work with, we started by searching for columns that contained only 0 and 1, and replaced these columns with boolean values.
 - Afterwards, we removed the rows that had "incomplete" data.
-- The last thing to fix was the fact that some rows focussed on team summaries, rather than individual players. Instead of removing it entirely, we decided to use two separate methods, one to generate a cleaned dataset of team summaries, and one method to generate a cleaned dataset of player data.
+- We then needed to fix the fact that some rows focussed on team summaries, rather than individual players. Instead of removing it entirely, we decided to use two separate function, one to generate a cleaned dataset of team summaries, and one to generate a cleaned dataset of player data.
+- Separating these rows caused the dataframes to have some columns that were entirely empty, so in order to avoid having entirely empty columns, we dropped empty columns.
 
 ```python
 def data_cleaning_summaries():
