@@ -143,7 +143,7 @@ To check for the dependency of the missingness, we used permutation tests while 
 
 After experimenting with different columns, we tested to see if the missingness of `doublekill` depended on the value of `league`. We found a p-value of 0. This showed that we could accept our null hypothesis, showing that the missingness of `doublekill` depended on the value of `league`. This also correlated to what we found in our NMAR analysis.
 
-We then tried seeing if the missingness of `ban3` depended on the value of `playerid`. We found a p-value of 0.181. This showed that we failed to reject our null hypothesis, showing that the missingness of `ban3` was not dependent on the value of `playerid`. 
+We then tried seeing if the missingness of `ban3` depended on the value of `playerid`. We found a p-value of 0.181. This showed that we failed to reject our null hypothesis, showing that the missingness of `ban3` was likely not dependent on the value of `playerid`. 
 
 <iframe
   src="assets/EmpKSStat.html"
