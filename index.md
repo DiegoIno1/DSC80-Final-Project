@@ -4,7 +4,7 @@ Created By:
 - Diego Inostroza
 - Dylan Berry
 
-<h2>**Introduction**</h2>
+<h2>Introduction</h2>
 
 On Oracle's Elixer's website, there is a dataset of match data surrounding professional leagues in the game "League of Legends". As two people who avidly love videogames, we were interested in seeing the patterns that could be drawn from this dataset. When analyzing the dataset at a surface level, we found ourselvews interested primarily in the gold "economy" of a League of Legends game. As a result, we posed the question:
 
@@ -23,9 +23,9 @@ However, there are some other interesting columns, columns like `kills` and `cha
 
 - The `kills` column describes the number of kills that a player gets throughout the game. Kills are a major source of gold throughout a game, so this should be connected to how much gold a player earns.
 
-<h2>**Data Cleaning and Exploratory Data Analysis**</h2>
+<h2>Data Cleaning and Exploratory Data Analysis</h2>
 
-<h3>**Data Cleaning**</h3>
+<h3>Data Cleaning</h3>
 
 Our dataset was already mostly clean, so in order to clean our data, we mostly focussed on four aspects of our dataset.
 
@@ -76,7 +76,7 @@ Players:
 | LOLTMNT03_179647 | complete           | LFL2     |   2025 | False      | 2025-01-11 11:11:24 |      1 |   15.01 |               4 | Blue   | bot        | IziDream   | Jinx       |         1592 | False    |
 | LOLTMNT03_179647 | complete           | LFL2     |   2025 | False      | 2025-01-11 11:11:24 |      1 |   15.01 |               5 | Blue   | sup        | IziDream   | Leona      |         1592 | False    |
 
-<h3>**Univariate Analysis**</h3>
+<h3>Univariate Analysis</h3>
 
 <iframe
   src="assets/GoldDist.html"
@@ -96,7 +96,7 @@ When examining the distribution of gold, we can see that there is a somewhat nor
 
 When examining the distribution of kills, we can see that there is a downward trend, where the mode of the kills is 1 kill per game, with increasing amounts of kills becoming less common as the amount of kills increase.
 
-<h3>**Bivariate Analysis**</h3>
+<h3>Bivariate Analysis</h3>
 
 <iframe
   src="assets/GoldDistPerChamp.html"
@@ -116,7 +116,7 @@ Because there are 170 champions in league, to visualize the gold earned by each 
 
 Once again, to retain readability in this count plot, we randomly selected 25 champions. This plot once again shows the differences between the average champion stats. Characters like Master Yi outperform characters like Yuumi by very large margins, which would greatly contribute to the gold earned.
 
-<h3>**Interesting Aggregates**</h3>
+<h3>Interesting Aggregates</h3>
 
 <sub>(Vertically and Horizontally truncated for readability)</sub>
 
@@ -131,13 +131,13 @@ Once again, to retain readability in this count plot, we randomly selected 25 ch
 Within this table, we can see the averaged gold earned by specific characters used in specific teams. This table notably shows that teams perform differently with each character. For example, Ankora Gaming and Anubis Gaming both have used the champion "Ahri". However, we can see that Anubis Gaming usually earns almost double the amount of gold that Ankora Gaming would typically earn. As a result, we can see that characters have an impact on gold earnings, but there is a lot more than just the characters themselves. 
 
 
-<h2>**Assessment of Missingness**</h2>
+<h2>Assessment of Missingness</h2>
 
-<h3>**NMAR Analysis**</h3>
+<h3>NMAR Analysis</h3>
 
 In our dataset, there are many columns with missing values. However, when observed more carefully, we can see that this is a result of how the data was collected. For each unique `gameid`, we can see that there are 12 corresponding rows. 10 of these are for each team of 5 players, while 2 rows exist as summary data for each team. Because they are summaries for the entire team, they ultimately interact with columns differently, making those columns MD. This makes intuitive sense, as an entire team cannot play as a single character, meaning that the summary's `champion` column will be missing. This pattern continues for other significant columns, for example, only one player in a game can get a 'first blood' kill in a game. In the game, this gives bonus gold to that player, and as a result of it being focused around one player, the value will be missing in a team's summary. There are also other missing columns, shown by the `datacompleteness` column. These rows are missing data, but when we sort by their `league`, we can see that this data is MAR, as the "partially" complete data is only present in the "LPL" league. Because of this, it seems that none of our data is NMAR, as every missing data point can be described as either MAR or MD.
 
-<h3>**Missingness Dependency**</h3>
+<h3>Missingness Dependency</h3>
 
 To check for the dependency of the missingness, we used permutation tests while starting with the null hypothesis: "The missingness of X does not depend on the value of Y" and the alternative hypothesis: "The missingness of X does depend on the value of Y", where X and Y were two columns of the dataset.
 
@@ -154,7 +154,7 @@ We then tried seeing if the missingness of `ban3` depended on the value of `play
 
 When graphed, we can see that the observed Kolmogorov–Smirnov statistic is far greater than any of the permuted statistics. This shows why we consistently obtaina  0 
 
-<h2>**Hypothesis Testing**</h2>
+<h2>Hypothesis Testing</h2>
 
 - Null Hypothesis: The amount of gold earned over the course of a game DOES NOT have an effect on whether or not the team wins the game.
 
@@ -164,21 +164,21 @@ When performing our permutation testing, we started by using the difference in a
 
 Ultimately, these choices were useful in answering our question, as it used the `earnedgold` column's mean, along with a permutation test, to see if there was really a correlation between the distribution of `earnedgold` and the distribution of a game's results.
 
-<h2>**Framing a Prediction Problem**</h2>
+<h2>Framing a Prediction Problem</h2>
 
 With this project, my partner and I will be predicting how much gold is earned at the end of a game of League of Legends. There are many moving parts to this, and as such, we went through a lot of the columns in the data set to determine the best fit. This is a regression problem, and we picked it because it seemed like the most interesting value to predict. Also, gold is arguably the most important resource in League of Legends, and thus has the most value in predicting. To assess the accuracy of our model, we went with Mean Squared Error, because we are doing linear regression, so MSE makes the most sense to use in the scope of our project. All our features are available at any given time over the course of a game, but the total gold earned is only revealed at the end. As such, we would have available to us all of the information we need to effectively and concisely predict gold.
 
 There is a column in the data set that could be used to predict the amount of gold earned quite effectively, with the column in question being gold spent. However, we thought that using the amount of gold spent would not be helpful with predicting due to the 2 values (gold spent, gold earned) being directly connected. It would ruin the prediction, and that is why we decided to not use the other columns that reference gold.
 
-<h2>**Baseline Model**</h2>
+<h2>Baseline Model</h2>
 
 So, the model we decided to start with is a simple linear regression model. There was no adjustment done to the data, and it was not preprocessed in any way. We just threw the ‘result’, ‘kills’, and ‘monsterkills’ columns into a basic linear regression model from scikit-learn, and then tested on a train-test split to ensure the data generalised well. These columns we chose represent whether or not the team won the game, how many kills the team got over the course of the game, and how many monsters in the jungle were killed by each team. We calculated the mean squared error, the r squared value, and the average absolute error. On average, we were getting a MSE of 12 million, an r-squared of .84, and an average absolute error of 2700. The MSE is a bit misleading, because it is large enough to warrant concern, but it is only that large because of the amount of data we have. The MSE on its own is not a great indicator of how good our model may or may not predict certain values, but the r-squared showing a decently high correlation, and the average absolute error only being 2700 pieces away is pretty good. In a game of league of legends, where there can be 15 to 40 thousand pieces of gold earned over the course of a game, being off on average by 5 to 20 percent is not bad for a baseline model. However, we can do better. We will show as such in the next part, because our model will be more advanced, have more features, and those features will be engineered to get the best possible prediction.
 
-<h2>**Final Model**</h2>
+<h2>Final Model</h2>
 
 The model, while still being based on linear regression, has gotten some upgrades. In terms of new columns, we went with ‘barons’, ‘towers’, ‘vision score’, ‘minion kills’, and ‘dragons’. We dropped the monster kills column due to only 1 player on the team really benefiting from killing the monsters, so we instead switched to minion kills, which are more impactful for the other 4 players in the game. As it was more impactful, it is also a better predictor of how much gold was earned over the course of a game. The barons column, which represents Baron Nashor, an optional side objective that you and your team can take on to help with winning the game, how many times he was killed. The more times you kill him, the more likely you are to be winning, and thus the more likely you are to have more gold. As such, it is a good predictor of gold earned. Towers are another good predictor, because every time you or one of your teammates destroys a tower, you get gold. Thus, more towers destroyed equals more gold for your team. Vision score, which represents how impactful your wards (aka cameras) were over the course of the game. The team with better vision score is more likely to win the game due to an informational advantage, and despite not being directly correlated with gold, become a predictor due to their involvement in winning the game. Dragons are another side objective, much like Baron Nashor, dragons also give you gold and help you win the game. The more dragons you kill, the more likely you are to be winning, and thus the more gold we can expect you to have. These features are all linearly correlated with gold earned, but we figured that model could use some more advanced feature engineering, which is why I decided to standardize the columns ‘vision score’ and ‘minion kills’. These columns had a lot of variance due to having larger ranges, and thus we thought it could benefit in the readability of the model on the inside. Of course, using a StandardScaler on a linear regression will not have any effect on the accuracy of the prediction. However, we thought it was still worth it to use the scaler on the columns to improve the understanding of the model. Next, we have the hyperparameters. Of the hyperparameters to tune, the one we chose is Polynomial Features. To tune this, we tested every polynomial from 1 to 20 on a k-folds cross-validation, and found the best option to be either 2 or 3. In the actual final build of the model, we set it up to run a k-folds cross-validation from 1 to 5 every time the model runs. As such, sometimes it will decide that either 2 or 3 is the better one to use based on the training data. Now to the meat and potatoes of our analysis, the performance of the model. We reduced the MSE by approximately a factor of 10, bringing it down to 1.6 million, much better than the previous 12 million. The r-squared value went up to .98, suggesting a higher correlation then before, which is quite nice. And lastly, we got the average absolute error of about 980, which is significantly better than the previous error of 2700. This is a great improvement over our previous model, because it is magnitudes more accurate, and being off by only 900 gold on average is barely a blip in the radar. Gold is used to buy items, and the average item costs 3000 gold. Being off by 2700 is almost an entire item, which is a HUGE power spike in terms of gameplay. 900 gold, on the other hand, is only closer to 1/3rd of an item, which does not grant any large scale power spikes. As such, 900 gold is close enough to be unimportant, over 2700 which could make the difference between winning and losing the game. As such, our model is a good model, and can make reasonably accurate predictions.
 
-<h2>**Fairness Analysis**</h2>
+<h2>Fairness Analysis</h2>
 
 For our 2 groups to test between, we decided to go with the different leagues that are recorded in the data set. The 2 leagues we ended up choosing are LFL2, which stands for Ligue Française de League of Legends and is the 11th edition of the French League of Legends semi-professional league. The other group we ended up choosing is the LCKC, the League of Legends Championship Korea. The test statistic we chose is the difference in the MSE, because as stated earlier, MSE is very useful for comparing the models, but not as helpful in seeing how accurate the model itself is. Our null hypothesis is that the groups are NOT being treated differently, and the alternative hypothesis is that the groups ARE being treated differently. With this in mind, we performed our permutation test, and got a shocking p-value of .2183. This p-value tells us that we fail to reject the null hypothesis, and there is no evidence that the groups are being treated differently. 
 
