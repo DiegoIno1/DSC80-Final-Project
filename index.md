@@ -89,4 +89,20 @@ Once again, to retain readability in this count plot, we randomly selected 25 ch
 
 In our dataset, there are many columns with missing values. However, when observed more carefully, we can see that this is a result of how the data was collected. For each unique `gameid`, we can see that there are 12 corresponding rows. 10 of these are for each team of 5 players, while 2 rows exist as summary data for each team. Because they are summaries for the entire team, they ultimately interact with columns differently, making those columns MD. This makes intuitive sense, as an entire team cannot play as a single character, meaning that the summary's `champion` column will be missing. This pattern continues for other significant columns, for example, only one player in a game can get a 'first blood' kill in a game. In the game, this gives bonus gold to that player, and as a result of it being focused around one player, the value will be missing in a team's summary. There are also other missing columns, shown by the `datacompleteness` column. These rows are missing data, but when we sort by their `league`, we can see that this data is MAR, as the "partially" complete data is only present in the "LPL" league. Because of this, it seems that none of our data is NMAR, as every missing data point can be described as either MAR or MD.
 
-<h3>NMAR Analysis</h3>
+<h3>Missingness Dependency</h3>
+
+To check for the dependency of the missingness, we used permutation tests while starting with the null hypothesis: "The missingness of X does not depend on the value of Y" and the alternative hypothesis: "The missingness of X does depend on the value of Y", where X and Y were two columns of the dataset.
+
+After experimenting with different columns, we tested to see if the missingness of `doublekill` depended on the value of `league`. We found a p-value of 0. This showed that we could accept our null hypothesis, showing that the missingness of `doublekill` depended on the value of `league`. This also correlated to what we found in our NMAR analysis.
+
+We then tried seeing if the missingness of `ban3` depended on the value of `playerid`. We found a p-value of 0.181. This showed that we failed to reject our null hypothesis, showing that the missingness of `ban3` was not dependent on the value of `playerid`. 
+
+<h3>Hypothesis Testing</h3>
+
+<h3>Framing a Prediction Problem</h3>
+
+<h3>Baseline Model</h3>
+
+<h3>Final Model</h3>
+
+<h3>Fairness Analysis</h3>
