@@ -97,6 +97,13 @@ After experimenting with different columns, we tested to see if the missingness 
 
 We then tried seeing if the missingness of `ban3` depended on the value of `playerid`. We found a p-value of 0.181. This showed that we failed to reject our null hypothesis, showing that the missingness of `ban3` was not dependent on the value of `playerid`. 
 
+<iframe
+  src="assets/EmpKSStat.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 <h3>Hypothesis Testing</h3>
 
 <h3>Framing a Prediction Problem</h3>
