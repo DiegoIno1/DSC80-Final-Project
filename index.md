@@ -60,7 +60,7 @@ Team Summaries:
 
 Players:
 
-(Vertically and Horizontally truncated for readability)
+<sub>(Vertically and Horizontally truncated for readability)</sub>
 
 | gameid           | datacompleteness   | league   |   year | playoffs   | date                |   game |   patch |   participantid | side   | position   | teamname   | champion   |   gamelength | result   |
 |:-----------------|:-------------------|:---------|-------:|:-----------|:--------------------|-------:|--------:|----------------:|:-------|:-----------|:-----------|:-----------|-------------:|:---------|
@@ -112,7 +112,7 @@ Once again, to retain readability in this count plot, we randomly selected 25 ch
 
 <h3>Interesting Aggregates</h3>
 
-(Vertically and Horizontally truncated for readability)
+<sub>(Vertically and Horizontally truncated for readability)</sub>
 
 | champion   |   100 Thieves |   5M Esports |   A One Man Army |   A One Man Army Prime |   A One Man Army Prime Academy |   AKA HERO |   Actions Per Minute |   All for One Gaming |   Ankora Gaming |   Anubis Gaming |   Anyone's Legend |
 |:-----------|--------------:|-------------:|-----------------:|-----------------------:|-------------------------------:|-----------:|---------------------:|---------------------:|----------------:|----------------:|------------------:|
