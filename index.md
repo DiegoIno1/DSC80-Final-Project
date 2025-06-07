@@ -4,7 +4,7 @@ Created By:
 - Diego Inostroza
 - Dylan Berry
 
-<h2>Introduction</h2>
+<h2><ins>Introduction</ins></h2>
 
 On Oracle's Elixer's website, there is a dataset of match data surrounding professional leagues in the game "League of Legends". As two people who avidly love videogames, we were interested in seeing the patterns that could be drawn from this dataset. When analyzing the dataset at a surface level, we found ourselvews interested primarily in the gold "economy" of a League of Legends game. As a result, we posed the question:
 
