@@ -22,19 +22,28 @@ Within this dataset, there are 61572 rows and 161 columns. Out of these columns,
 
 <h3>Data Cleaning</h3>
 
-Our dataset was already mostly clean, so in order to clean our data, we mostly focussed on two aspects of our dataset.
+Our dataset was already mostly clean, so in order to clean our data, we mostly focussed on three aspects of our dataset.
 
 - We started by noticing how some columns seemed to be boolean values as integers. In order to make the dataset more efficient to work with, we started by searching for columns that contained only 0 and 1, and replaced these columns with boolean values.
-- Afterwards, we removed the rows that had "incomplete" data, along with the rows that displayed the team summaries.
+- Afterwards, we removed the rows that had "incomplete" data.
+- The last thing to fix was the fact that some rows focussed on team summaries, rather than individual players. Instead of removing it entirely, we decided to use two separate methods, one to generate a cleaned dataset of team summaries, and one method to generate a cleaned dataset of player data.
 
 ```python
-def data_cleaning():
-    data = pd.read_csv(os.path.join('data', 'league_data.csv'))
+def data_cleaning_summaries():
+    data = pd.read_csv('LoLData.csv')
 
     boolCols = data.columns[data.isin([0, 1, np.nan]).all()]
     data[boolCols] = data[boolCols].replace({0: False, 1: True})
 
     return data[(data.champion.isna()) & (data.datacompleteness == 'complete')]
+
+def data_cleaning_players():
+    data = pd.read_csv('LoLData.csv')
+
+    boolCols = data.columns[data.isin([0, 1, np.nan]).all()]
+    data[boolCols] = data[boolCols].replace({0: False, 1: True})
+
+    return data[(~data.champion.isna()) & (data.datacompleteness == 'complete')]
 ```
 
 | gameid           | datacompleteness   |   url | league   |   year | split   | playoffs   | date                |   game |   patch |   participantid | side   | position   |   playername |   playerid | teamname                | teamid                                  |   champion | ban1    | ban2     | ban3    | ban4     | ban5      | pick1   | pick2   | pick3    | pick4    | pick5    |   gamelength | result   |   kills |   deaths |   assists |   teamkills |   teamdeaths |   doublekills |   triplekills |   quadrakills | pentakills   | firstblood   |   firstbloodkill |   firstbloodassist |   firstbloodvictim |   team kpm |   ckpm | firstdragon   |   dragons |   opp_dragons |   elementaldrakes |   opp_elementaldrakes |   infernals |   mountains |   clouds |   oceans |   chemtechs |   hextechs |   dragons (type unknown) |   elders |   opp_elders | firstherald   | heralds   | opp_heralds   |   void_grubs |   opp_void_grubs | firstbaron   |   barons |   opp_barons | firsttower   |   towers |   opp_towers | firstmidtower   | firsttothreetowers   |   turretplates |   opp_turretplates |   inhibitors |   opp_inhibitors |   damagetochampions |     dpm |   damageshare |   damagetakenperminute |   damagemitigatedperminute |   wardsplaced |    wpm |   wardskilled |   wcpm |   controlwardsbought |   visionscore |   vspm |   totalgold |   earnedgold |   earned gpm |   earnedgoldshare |   goldspent |      gspd |   gpr |   total cs |   minionkills |   monsterkills |   monsterkillsownjungle |   monsterkillsenemyjungle |    cspm |   goldat10 |   xpat10 |   csat10 |   opp_goldat10 |   opp_xpat10 |   opp_csat10 |   golddiffat10 |   xpdiffat10 |   csdiffat10 |   killsat10 |   assistsat10 |   deathsat10 |   opp_killsat10 |   opp_assistsat10 |   opp_deathsat10 |   goldat15 |   xpat15 |   csat15 |   opp_goldat15 |   opp_xpat15 |   opp_csat15 |   golddiffat15 |   xpdiffat15 |   csdiffat15 |   killsat15 |   assistsat15 |   deathsat15 |   opp_killsat15 |   opp_assistsat15 |   opp_deathsat15 |   goldat20 |   xpat20 |   csat20 |   opp_goldat20 |   opp_xpat20 |   opp_csat20 |   golddiffat20 |   xpdiffat20 |   csdiffat20 |   killsat20 |   assistsat20 |   deathsat20 |   opp_killsat20 |   opp_assistsat20 |   opp_deathsat20 |   goldat25 |   xpat25 |   csat25 |   opp_goldat25 |   opp_xpat25 |   opp_csat25 |   golddiffat25 |   xpdiffat25 |   csdiffat25 |   killsat25 |   assistsat25 |   deathsat25 |   opp_killsat25 |   opp_assistsat25 |   opp_deathsat25 |
@@ -88,13 +97,13 @@ Once again, to retain readability in this count plot, we randomly selected 25 ch
 
 <h3>Interesting Aggregates</h3>
 
-| champion   |   100 Thieves |   5M Esports |   A One Man Army |   A One Man Army Prime |   A One Man Army Prime Academy |   AKA HERO |   Actions Per Minute |   All for One Gaming |   Ankora Gaming |   Anubis Gaming |   Anyone's Legend |   Apex Mission Impossible |   Apex Predator |   Aurora |   Austrian Force willhaben |   Axolotl |
-|:-----------|--------------:|-------------:|-----------------:|-----------------------:|-------------------------------:|-----------:|---------------------:|---------------------:|----------------:|----------------:|------------------:|--------------------------:|----------------:|---------:|---------------------------:|----------:|
-| Aatrox     |       8795.5  |          nan |          6955    |                   3097 |                            nan |        nan |              6211.25 |                  nan |             nan |         4808    |           8024    |                      5548 |             nan |    nan   |                    6867    |    9225   |
-| Ahri       |       9062    |         9141 |          7159    |                    nan |                            nan |        nan |              8599    |                 6441 |            5327 |        10001.8  |           6824    |                       nan |             nan |   9061.5 |                    9072.8  |   10727.5 |
-| Akali      |      10404.5  |          nan |           nan    |                    nan |                            nan |        nan |              9643    |                  nan |             nan |         7458    |           9675.17 |                       nan |             nan |    nan   |                   10452.2  |    7798   |
-| Akshan     |        nan    |          nan |           nan    |                    nan |                            nan |        nan |               nan    |                  nan |             nan |          nan    |            nan    |                       nan |             nan |    nan   |                     nan    |     nan   |
-| Alistar    |       3928.33 |          nan |          3549.86 |                    nan |                            nan |        nan |              3833    |                  nan |             nan |         3731.71 |           4088.25 |                      1996 |             nan |   3707.5 |                    3654.25 |    3346   |
+| champion   |   100 Thieves |   5M Esports |   A One Man Army |   A One Man Army Prime |   A One Man Army Prime Academy |   AKA HERO |   Actions Per Minute |   All for One Gaming |   Ankora Gaming |   Anubis Gaming |   Anyone's Legend |
+|:-----------|--------------:|-------------:|-----------------:|-----------------------:|-------------------------------:|-----------:|---------------------:|---------------------:|----------------:|----------------:|------------------:|
+| Aatrox     |       8795.5  |          nan |          6955    |                   3097 |                            nan |        nan |              6211.25 |                  nan |             nan |         4808    |           8024    |
+| Ahri       |       9062    |         9141 |          7159    |                    nan |                            nan |        nan |              8599    |                 6441 |            5327 |        10001.8  |           6824    |
+| Akali      |      10404.5  |          nan |           nan    |                    nan |                            nan |        nan |              9643    |                  nan |             nan |         7458    |           9675.17 |
+| Akshan     |        nan    |          nan |           nan    |                    nan |                            nan |        nan |               nan    |                  nan |             nan |          nan    |            nan    |
+| Alistar    |       3928.33 |          nan |          3549.86 |                    nan |                            nan |        nan |              3833    |                  nan |             nan |         3731.71 |           4088.25 |
 
 Within this table, we can see the averaged gold earned by specific characters used in specific teams. This table notably shows that teams perform differently with each character. For example, Ankora Gaming and Anubis Gaming both have used the champion "Ahri". However, we can see that Anubis Gaming usually earns almost double the amount of gold that Ankora Gaming would typically earn. As a result, we can see that characters have an impact on gold earnings, but there is a lot more than just the characters themselves. 
 
