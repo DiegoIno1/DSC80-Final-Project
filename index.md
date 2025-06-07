@@ -48,7 +48,7 @@ def data_cleaning_players():
 
 Team Summaries:
 
-(Vertically and Horizontally truncated for readability)
+~(Vertically and Horizontally truncated for readability)~
 
 | gameid           | datacompleteness   | league   |   year | playoffs   | date                |   game |   patch |   participantid | side   | position   | teamname                |   gamelength | result   |   kills |
 |:-----------------|:-------------------|:---------|-------:|:-----------|:--------------------|-------:|--------:|----------------:|:-------|:-----------|:------------------------|-------------:|:---------|--------:|
