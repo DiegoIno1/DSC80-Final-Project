@@ -150,9 +150,9 @@ When graphed, we can see that the observed Kolmogorov–Smirnov statistic is far
 
 <h3>Hypothesis Testing</h3>
 
-Null Hypothesis: The amount of gold earned over the course of a game DOES NOT have an effect on whether or not the team wins the game.
+- Null Hypothesis: The amount of gold earned over the course of a game DOES NOT have an effect on whether or not the team wins the game.
 
-Alternative Hypothesis: The amount of gold earned over the course of a game DOES have an effect on whether or not the team wins the game.
+- Alternative Hypothesis: The amount of gold earned over the course of a game DOES have an effect on whether or not the team wins the game.
 
 When performing our permutation testing, we started by using the difference in average gold depending on whether they won or lost as our test statistic. We obtained a p-value of 0.0, and since we used a significance level of 0.05, this implied that we should reject the null hypothesis.
 
