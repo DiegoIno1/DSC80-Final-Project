@@ -152,7 +152,7 @@ We then tried seeing if the missingness of `ban3` depended on the value of `play
   frameborder="0"
 ></iframe>
 
-When graphed, we can see that the observed Kolmogorov–Smirnov statistic is far greater than any of the permuted statistics. This shows why we consistently obtaina  0 
+When graphed, we can see that the observed Kolmogorov–Smirnov statistic is far greater than any of the permuted statistics. This shows why we can consistently obtain a p-value of 0. 
 
 <h2><ins>Hypothesis Testing</ins></h2>
 
