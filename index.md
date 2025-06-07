@@ -52,7 +52,7 @@ def data_cleaning_players():
     return data[(~data.champion.isna()) & (data.datacompleteness == 'complete')].dropna(axis=1)
 ```
 
-Team Summaries:
+<ins>Team Summaries:</ins>
 
 <sub>(Vertically and Horizontally truncated for readability)</sub>
 
@@ -64,7 +64,7 @@ Team Summaries:
 | LOLTMNT06_96134  | complete           | LFL2     |   2025 | False      | 2025-01-11 12:06:37 |      1 |   15.01 |             200 | Red    | team       | Skillcamp               |         1922 | False    |      10 |
 | LOLTMNT06_95160  | complete           | LFL2     |   2025 | False      | 2025-01-11 13:07:47 |      1 |   15.01 |             100 | Blue   | team       | Karmine Corp Blue Stars |         1782 | False    |      18 |
 
-Players:
+<ins>Players:</ins>
 
 <sub>(Vertically and Horizontally truncated for readability)</sub>
 
