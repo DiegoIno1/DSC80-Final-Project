@@ -154,7 +154,9 @@ Null Hypothesis: The amount of gold earned over the course of a game DOES NOT ha
 
 Alternative Hypothesis: The amount of gold earned over the course of a game DOES have an effect on whether or not the team wins the game.
 
-When performing our permutation testing, we started by using the difference in average gold depending on whether they won or lost as our test statistic.
+When performing our permutation testing, we started by using the difference in average gold depending on whether they won or lost as our test statistic. We obtained a p-value of 0.0, and since we used a significance level of 0.05, this implied that we should reject the null hypothesis.
+
+Ultimately, these choices were useful in answering our question, as it used the `earnedgold` column's mean, along with a permutation test, to see if there was really a correlation between the distribution of `earnedgold` and the distribution of a game's results.
 
 <h3>Framing a Prediction Problem</h3>
 
