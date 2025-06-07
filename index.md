@@ -15,6 +15,9 @@ Within this dataset, there are 61572 rows and 161 columns. Out of these columns,
 
 However, there are some other interesting columns, columns like `kills` and `champion` which are interesting to explore, as they are directly connected to how gold may be earned.
 
+- The `champion` column describes the "champion" or character of a player. 
+
+- The `kills` column describes the number of kills that a player gets throughout the game. Kills are a major source of gold throughout a game, so this should be connected to how much gold a player earns.
 
 <h2>Data Cleaning and Exploratory Data Analysis</h2>
 
