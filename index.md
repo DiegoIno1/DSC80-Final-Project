@@ -48,6 +48,8 @@ def data_cleaning_players():
 
 Team Summaries:
 
+(Vertically and Horizontally truncated for readability)
+
 | gameid           | datacompleteness   | league   |   year | playoffs   | date                |   game |   patch |   participantid | side   | position   | teamname                |   gamelength | result   |   kills |
 |:-----------------|:-------------------|:---------|-------:|:-----------|:--------------------|-------:|--------:|----------------:|:-------|:-----------|:------------------------|-------------:|:---------|--------:|
 | LOLTMNT03_179647 | complete           | LFL2     |   2025 | False      | 2025-01-11 11:11:24 |      1 |   15.01 |             100 | Blue   | team       | IziDream                |         1592 | False    |       3 |
@@ -57,6 +59,8 @@ Team Summaries:
 | LOLTMNT06_95160  | complete           | LFL2     |   2025 | False      | 2025-01-11 13:07:47 |      1 |   15.01 |             100 | Blue   | team       | Karmine Corp Blue Stars |         1782 | False    |      18 |
 
 Players:
+
+(Vertically and Horizontally truncated for readability)
 
 | gameid           | datacompleteness   | league   |   year | playoffs   | date                |   game |   patch |   participantid | side   | position   | teamname   | champion   |   gamelength | result   |
 |:-----------------|:-------------------|:---------|-------:|:-----------|:--------------------|-------:|--------:|----------------:|:-------|:-----------|:-----------|:-----------|-------------:|:---------|
@@ -107,6 +111,8 @@ Because there are 170 champions in league, to visualize the gold earned by each 
 Once again, to retain readability in this count plot, we randomly selected 25 champions. This plot once again shows the differences between the average champion stats. Characters like Master Yi outperform characters like Yuumi by very large margins, which would greatly contribute to the gold earned.
 
 <h3>Interesting Aggregates</h3>
+
+(Vertically and Horizontally truncated for readability)
 
 | champion   |   100 Thieves |   5M Esports |   A One Man Army |   A One Man Army Prime |   A One Man Army Prime Academy |   AKA HERO |   Actions Per Minute |   All for One Gaming |   Ankora Gaming |   Anubis Gaming |   Anyone's Legend |
 |:-----------|--------------:|-------------:|-----------------:|-----------------------:|-------------------------------:|-----------:|---------------------:|---------------------:|----------------:|----------------:|------------------:|
