@@ -148,7 +148,7 @@ We then tried seeing if the missingness of `ban3` depended on the value of `play
 
 When graphed, we can see that the observed Kolmogorov–Smirnov statistic is far greater than any of the permuted statistics. This shows why we consistently obtaina  0 
 
-<h3>Hypothesis Testing</h3>
+<h2>Hypothesis Testing</h2>
 
 - Null Hypothesis: The amount of gold earned over the course of a game DOES NOT have an effect on whether or not the team wins the game.
 
@@ -158,10 +158,10 @@ When performing our permutation testing, we started by using the difference in a
 
 Ultimately, these choices were useful in answering our question, as it used the `earnedgold` column's mean, along with a permutation test, to see if there was really a correlation between the distribution of `earnedgold` and the distribution of a game's results.
 
-<h3>Framing a Prediction Problem</h3>
+<h2>Framing a Prediction Problem</h2>
 
-<h3>Baseline Model</h3>
+<h2>Baseline Model</h2>
 
-<h3>Final Model</h3>
+<h2>Final Model</h2>
 
-<h3>Fairness Analysis</h3>
+<h2>Fairness Analysis</h2>
