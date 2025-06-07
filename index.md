@@ -8,10 +8,12 @@ Does the amount of gold earned over the course of a game have an effect on wheth
 
 This question is interesting, as League of Legends is one of the most popular e-sports games. Furthermore, gold allows characters to buy items that make their champions stronger. As a result, its an important resource in the game. However, some "roles" that people play can gain different amounts of gold. Supporting roles are incredibly important to the game, being vital to any fight they are a part of, yet they earn less gold than other roles.
 
-Within this dataset, there are 61572 rows and 161 columns. Out of these columns, a few columns are especially important to us. The columns `earnedgold` and `result` are notable in exploring our question.
+Within this dataset, there are 61572 rows and 161 columns. Out of these columns, a few columns are especially important to us. The columns `earnedgold` and `result` are especially notable in exploring our question.
 
 - The `earnedgold` column describes the total gold that a player earns throughout the game.
 - The `result` column describes the outcome of the match, showing if a player or team won the match.
+
+However, there are some other interesting columns, columns like `kills` and `champion` which are interesting to explore, as they are directly connected to how gold may be earned.
 
 
 <h2>Data Cleaning and Exploratory Data Analysis</h2>
