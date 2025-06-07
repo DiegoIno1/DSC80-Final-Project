@@ -104,6 +104,8 @@ We then tried seeing if the missingness of `ban3` depended on the value of `play
   frameborder="0"
 ></iframe>
 
+When graphed, we can see that the observed Kolmogorov–Smirnov statistic is far greater than any of the permuted statistics. This shows why we consistently obtaina  0 
+
 <h3>Hypothesis Testing</h3>
 
 <h3>Framing a Prediction Problem</h3>
